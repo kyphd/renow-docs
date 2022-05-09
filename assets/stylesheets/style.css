@@ -1,0 +1,29 @@
+.avatar {
+	width: 150px;
+	border-radius: 100px;
+}
+
+.member {
+	float:  left;
+	margin: 0 10px;
+}
+
+.member .name {
+	text-align: center;
+}
+
+.clearfix:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+ 
+.clearfix:before {
+　　　　content: "";
+	display: block;
+	clear: both;
+}
+ 
+.clearfix {
+	display: block;
+}
