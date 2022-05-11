@@ -65,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#about-renow-ai" class="md-skip">
+        <a href="#renow-ai" class="md-skip">
           コンテンツにスキップ
         </a>
       
@@ -329,10 +329,76 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          About Re:Now
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         About Re:Now
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目次">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    機能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renow" class="md-nav__link">
+    Re:Nowの由来
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="mjlog/" class="md-nav__link">
+        天鳳の牌譜（mjlog）
+      </a>
     </li>
   
 
@@ -582,6 +648,42 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目次
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    はじめに
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    機能
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renow" class="md-nav__link">
+    Re:Nowの由来
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -594,10 +696,26 @@
                 
 
 
-<h1 id="about-renow-ai">About Re:Now (麻雀AI)</h1>
+<h1 id="renow-ai">Re:Now (麻雀AI)</h1>
+<p><img alt="Re:Now" src="images/renow.jpg" /></p>
+<h2 id="_1">はじめに</h2>
 <p>Re:Nowは天鳳での利用を想定した麻雀AIである。</p>
-<p>まだ構想段階であり完成形は未定であるが、Playerおよび解析ソフトとしての機能を想定している。</p>
+<p><a href="https://tenhou.net/" target="_blank">天鳳</a>はオンライン対戦型麻雀である。2022年5月現在の累計登録ID数は約630万人、アクティブなID数は28万人であり、世界最大の麻雀コミュニティであろう。その中でも鳳凰卓は天鳳における最上位の卓であり、現在22人しか在位していない。鳳凰卓にはプロも参戦しており、まさに麻雀界のトップオブトップが集う卓である<sup><a href="#references">[1]</a></sup>。</p>
+<p>天鳳は2006年の開設以来、すべての対戦記録や牌譜を保存しており、そのうち鳳凰卓については開設された2009年からの牌譜が公開されている。天鳳はAIの開発支援に積極的（？）で、参戦について専用IDを発行するなどの方法で認めているし、作成した麻雀AIの検証のために鳳凰卓の牌譜を十分活用することを薦めており<sup><a href="#references">[2]</a></sup>、麻雀AI開発のために鳳凰卓の牌譜を公開していると言っていいだろう。もっとも、「天鳳と競合する製品への開発・応用を目的として牌譜を使用していただくことはできません。」という注意事項は遵守しなければならない。</p>
+<p>機械学習によるゲームAIについては、将棋AIのPonanza<sup><a href="#references">[3]</a></sup>や囲碁AIのAlpha Go<sup><a href="#references">[4]</a></sup>などが有名である。これらの棋力はすでに人を凌駕しており、プロも学習のためにAIを使う時代であり、藤井聡太五冠はまさにAIが作り上げたと言っても過言ではなかろう。将棋と囲碁のAIは、まずは①過去の棋譜を利用した教師あり学習からはじめ、その後②AI同士の対戦といった強化学習を行う、という流れでここまでの強さを手に入れた。同様の開発の流れが麻雀にも妥当するかどうかは、麻雀と将棋・囲碁のゲーム性の違い（麻雀が不完全情報ゲームである点や、一局ごとの勝敗と最終的な順位は別等）から不明ではあるが、現在麻雀最強AIであるSuphx<sup><a href="#references">[5]</a></sup>も将棋・囲碁AIと同様の開発手法をなぞっていることからも、現時点では正解に思える。そこで、本Re:Now開発においても、鳳凰卓の牌譜データを利用した教師あり学習をまずは行うこととする。</p>
+<h2 id="_2">機能</h2>
+<ul>
+<li>まだ構想段階であり完成形は未定であるが、Playerおよび解析ソフトとしての機能を想定している。</li>
+<li>普段三麻をすることが多いため、三麻を対象とした麻雀AIを作成することにする。</li>
+</ul>
+<h2 id="renow">Re:Nowの由来</h2>
 <p>Re:Nowは、"I'm ready now."に由来しており、Re:はreadyのことである。</p>
+<h2 id="references">References</h2>
+<p>[1] 天鳳-ランキング: <a href="https://tenhou.net/ranking.html" target="_blank">https://tenhou.net/ranking.html</a></p>
+<p>[2] 天鳳-AIで段位戦を打つ場合の注意点: <a href="https://tenhou.net/man/#AI" target="_blank">https://tenhou.net/man/#AI</a></p>
+<p>[3] <a href="http://ceur-ws.org/Vol-2448/SSS19_Paper_Upload_219.pdf" target="_blank">Yuichi Yoda et. al., A Study of Basis on AI-based Information Systems: The Case of Shogi AI System “Ponanza”, Proceedings of AAAI-Spring Symposium 2019</a></p>
+<p>[4] <a href="https://www.nature.com/articles/nature16961" target="_blank">David Silver et. al., Mastering the game of Go with deep neural networks and tree search, Nature 529, 484-489 (2016)</a></p>
+<p>[5] <a href="https://doi.org/10.48550/arXiv.2003.13590" target="_blank">Junjie Li et. al., Suphx: Mastering Mahjong with Deep Reinforcement Learning, arXiv:2003.13590</a></p>
 
               
             </article>
@@ -627,13 +745,13 @@
       
       
         
-        <a href="environment/" class="md-footer__link md-footer__link--next" aria-label="次: 開発環境" rel="next">
+        <a href="mjlog/" class="md-footer__link md-footer__link--next" aria-label="次: 天鳳の牌譜（mjlog）" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 次
               </span>
-              開発環境
+              天鳳の牌譜（mjlog）
             </div>
           </div>
           <div class="md-footer__button md-icon">
