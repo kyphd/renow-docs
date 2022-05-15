@@ -1,9 +1,38 @@
+:root {
+
+}
+
+[data-md-color-scheme=slate] {
+	--md-typeset-a-color: #6791e0;
+}
+
 .md-typeset h2 {
 	border-bottom: solid;
 }
 
 .md-typeset h3 {
 	border-bottom: dashed;
+}
+
+.md-typeset h4 {
+	text-decoration: underline;
+	font-size: 1.1em;
+}
+
+.md-typeset h5 {
+	text-transform: unset;
+	color: unset;
+	font-size: unset;
+	text-decoration: underline dotted;
+	font-size: 1.1em;
+}
+
+.md-typeset h6 {
+	text-transform: unset;
+	color: unset;
+	font-size: unset;
+	font-weight: unset;
+	text-decoration: underline;
 }
 
 .avatar {

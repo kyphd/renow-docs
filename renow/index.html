@@ -9,7 +9,7 @@
       
       
       <link rel="icon" href="../assets/images/re.png">
-      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.14">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
     
     
       
@@ -17,7 +17,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.3de6f41f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.c382b1dc.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.cc9b2e1e.min.css">
@@ -727,9 +727,9 @@
 <p><img alt="Re:Now" src="images/renow.jpg" /></p>
 <h2 id="_1">はじめに</h2>
 <p>Re:Nowは天鳳での利用を想定した麻雀AIである。</p>
-<p><a href="https://tenhou.net/" target="_blank">天鳳</a>はオンライン対戦型麻雀である。2022年5月現在の累計登録ID数は約630万人、アクティブなID数は28万人であり、世界最大の麻雀コミュニティであろう。その中でも鳳凰卓は天鳳における最上位の卓であり、7段以上、R2000以上の有料会員しか参戦できない。7段以上の人数は四麻・三麻合わせて約4400人で、アクティブな人数で割るとおよそ上位1.5%となる。鳳凰卓にはプロも参戦しており、雀力、情熱ともに麻雀界のトップが集う卓である<sup><a href="#references">[1]</a></sup>。</p>
-<p>天鳳は2006年の開設以来、すべての対戦記録や牌譜を保存しており、そのうち鳳凰卓については開設された2009年からの牌譜が公開されている。天鳳はAIの開発支援に積極的（？）で、参戦について専用IDを発行するなどの方法で認めているし、作成した麻雀AIの検証のために鳳凰卓の牌譜を十分活用することを薦めており<sup><a href="#references">[2]</a></sup>、麻雀AI開発のために鳳凰卓の牌譜を公開していると言っていいだろう。もっとも、「天鳳と競合する製品への開発・応用を目的として牌譜を使用していただくことはできません。」という条件付きではあるが。</p>
-<p>機械学習によるゲームAIについては、将棋AIのPonanza<sup><a href="#references">[3]</a></sup>や囲碁AIのAlpha Go<sup><a href="#references">[4]</a></sup>などが有名である。これらの棋力はすでに人を凌駕しており、プロも学習のためにAIを使うとともに新たな戦法・定石がAIによって生み出される時代である。藤井聡太五冠はまさにAIが作り上げたと言っても過言ではなかろう。将棋と囲碁のAIは、まずは①過去の棋譜を利用した教師あり学習からはじめ、その後②AI同士の対戦といった強化学習を行う、という流れでここまでの強さを手に入れた。同様の開発の流れが麻雀にも妥当するかどうかは、麻雀と将棋・囲碁のゲーム性の違い（麻雀が不完全情報ゲームである点や、一局ごとの勝敗と最終的な順位は別等）から不明ではあるが、現在麻雀最強AIであるSuphx<sup><a href="#references">[5]</a></sup>も将棋・囲碁AIと同様の開発手法をなぞっていることからも、教師あり学習からスタートするのが現時点では正解に思える。そこで、本Re:Now開発においても、鳳凰卓の牌譜データを利用した教師あり学習をまずは行うこととする。</p>
+<p><a href="https://tenhou.net/" target="_blank">天鳳</a>はオンライン対戦型麻雀である。2022年5月現在の累計登録ID数は約630万人、アクティブなID数は28万人であり、世界最大の麻雀コミュニティであろう。その中でも鳳凰卓は天鳳における最上位の卓であり、7段以上、R2000以上の有料会員しか参戦できない。7段以上の人数は四麻・三麻合わせて約4400人で、アクティブな人数で割るとおよそ上位1.5%となる。鳳凰卓にはプロも参戦しており、雀力、情熱ともに麻雀界のトップが集う卓である<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>。</p>
+<p>天鳳は2006年の開設以来、すべての対戦記録や牌譜を保存しており、そのうち鳳凰卓については開設された2009年からの牌譜が公開されている。天鳳はAIの開発支援に積極的（？）で、参戦について専用IDを発行するなどの方法で認めているし、作成した麻雀AIの検証のために鳳凰卓の牌譜を十分活用することを薦めており<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>、麻雀AI開発のために鳳凰卓の牌譜を公開していると言っていいだろう。もっとも、「天鳳と競合する製品への開発・応用を目的として牌譜を使用していただくことはできません。」という条件付きではあるが。</p>
+<p>機械学習によるゲームAIについては、将棋AIのPonanza<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup>や囲碁AIのAlpha Go<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>などが有名である。これらの棋力はすでに人を凌駕しており、プロも学習のためにAIを使うとともに新たな戦法・定石がAIによって生み出される時代である。藤井聡太五冠はまさにAIが作り上げたと言っても過言ではなかろう。将棋と囲碁のAIは、まずは①過去の棋譜を利用した教師あり学習からはじめ、その後②AI同士の対戦といった強化学習を行う、という流れでここまでの強さを手に入れた。同様の開発の流れが麻雀にも妥当するかどうかは、麻雀と将棋・囲碁のゲーム性の違い（麻雀が不完全情報ゲームである点や、一局ごとの勝敗と最終的な順位は別等）から不明ではあるが、現在麻雀最強AIであるSuphx<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>も将棋・囲碁AIと同様の開発手法をなぞっていることからも、教師あり学習からスタートするのが現時点では正解に思える。そこで、本Re:Now開発においても、鳳凰卓の牌譜データを利用した教師あり学習をまずは行うこととする。</p>
 <h2 id="_2">機能</h2>
 <ul>
 <li>まだ構想段階であり完成形は未定であるが、Playerおよび解析ソフトとしての機能を想定している。</li>
@@ -738,11 +738,26 @@
 <h2 id="renow">Re:Nowの由来</h2>
 <p>Re:Nowは、"I'm ready now."に由来しており、Re:はreadyのことである。</p>
 <h2 id="references">References</h2>
-<p>[1] 天鳳-ランキング: <a href="https://tenhou.net/ranking.html" target="_blank">https://tenhou.net/ranking.html</a></p>
-<p>[2] 天鳳-AIで段位戦を打つ場合の注意点: <a href="https://tenhou.net/man/#AI" target="_blank">https://tenhou.net/man/#AI</a></p>
-<p>[3] <a href="http://ceur-ws.org/Vol-2448/SSS19_Paper_Upload_219.pdf" target="_blank">Yuichi Yoda et. al., A Study of Basis on AI-based Information Systems: The Case of Shogi AI System “Ponanza”, Proceedings of AAAI-Spring Symposium 2019</a></p>
-<p>[4] <a href="https://www.nature.com/articles/nature16961" target="_blank">David Silver et. al., Mastering the game of Go with deep neural networks and tree search, Nature 529, 484-489 (2016)</a></p>
-<p>[5] <a href="https://doi.org/10.48550/arXiv.2003.13590" target="_blank">Junjie Li et. al., Suphx: Mastering Mahjong with Deep Reinforcement Learning, arXiv:2003.13590</a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>天鳳-ランキング: <a href="https://tenhou.net/ranking.html" target="_blank">https://tenhou.net/ranking.html</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>天鳳-AIで段位戦を打つ場合の注意点: <a href="https://tenhou.net/man/#AI" target="_blank">https://tenhou.net/man/#AI</a>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="http://ceur-ws.org/Vol-2448/SSS19_Paper_Upload_219.pdf" target="_blank">Yuichi Yoda et. al., A Study of Basis on AI-based Information Systems: The Case of Shogi AI System “Ponanza”, Proceedings of AAAI-Spring Symposium 2019</a>&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://www.nature.com/articles/nature16961" target="_blank">David Silver et. al., Mastering the game of Go with deep neural networks and tree search, Nature 529, 484-489 (2016)</a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://doi.org/10.48550/arXiv.2003.13590" target="_blank">Junjie Li et. al., Suphx: Mastering Mahjong with Deep Reinforcement Learning, arXiv:2003.13590</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
@@ -811,7 +826,7 @@
     <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "\u30b3\u30d4\u30fc\u3057\u307e\u3057\u305f", "clipboard.copy": "\u30af\u30ea\u30c3\u30d7\u30dc\u30fc\u30c9\u3078\u30b3\u30d4\u30fc", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\u3000\u3001\u3002\uff0c\uff0e]+", "search.placeholder": "\u691c\u7d22", "search.result.more.one": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3082\u30461\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.more.other": "\u3053\u306e\u30da\u30fc\u30b8\u5185\u306b\u3042\u3068#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.none": "\u4f55\u3082\u898b\u3064\u304b\u308a\u307e\u305b\u3093\u3067\u3057\u305f", "search.result.one": "1\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.other": "#\u4ef6\u898b\u3064\u304b\u308a\u307e\u3057\u305f", "search.result.placeholder": "\u691c\u7d22\u30ad\u30fc\u30ef\u30fc\u30c9\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044", "search.result.term.missing": "\u691c\u7d22\u306b\u542b\u307e\u308c\u306a\u3044", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.c2e1ee47.min.js"></script>
+      <script src="../assets/javascripts/bundle.a6c66575.min.js"></script>
       
         <script src="../assets/javascripts/mathjax.js"></script>
       
