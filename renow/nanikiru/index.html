@@ -432,12 +432,72 @@
     mjlogから何切る問題のデータセットを作る。
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="mjlogから何切る問題のデータセットを作る。">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     インプットデータ、アウトプットデータの形式
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    全結合学習
+  </a>
+  
+    <nav class="md-nav" aria-label="全結合学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    全結合モデル用データセット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    モデル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    プレテスト
+  </a>
+  
+    <nav class="md-nav" aria-label="プレテスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    結果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    速度計測
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -782,12 +842,72 @@
     mjlogから何切る問題のデータセットを作る。
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="mjlogから何切る問題のデータセットを作る。">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#_7" class="md-nav__link">
     インプットデータ、アウトプットデータの形式
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    全結合学習
+  </a>
+  
+    <nav class="md-nav" aria-label="全結合学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    全結合モデル用データセット
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    モデル
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    プレテスト
+  </a>
+  
+    <nav class="md-nav" aria-label="プレテスト">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    結果
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    速度計測
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -925,17 +1045,80 @@
 <p>mjlogを解析して各局面の情報を出力したのが以下。</p>
 <p><img alt="tenhou" src="../images/nanikiru_01.jpg" /></p>
 <p><img alt="kaiseki" src="../images/nanikiru_02.jpg" /></p>
-<p>全局面は確認できないが、数局確認したところ正しいことは確認している。（これが間違っていたら間違ったことを学習させることになるので大変。）</p>
+<p>全局面は確認できないが、数局は正しいことを確認している。（これが間違っていたら間違ったことを学習させることになるので大変。）</p>
 <p>本データ整理において、以下は仕様である。</p>
 <ul>
-<li>立直後は強制ツモ切りのため学習局面から削除。</li>
+<li>立直後は強制ツモ切りのため学習局面から削除。局面数がおよそ1.6億局面となった。</li>
 <li>鳴き牌について。誰から鳴いたかは記録しないが、誰かの河に鳴いた牌が記録として存在するので、AIがうまいことその情報を拾い上げるかもしれない。</li>
 <li>大明槓と加槓は区別しない。場に見えている牌という意味で同じ。ただ、河の情報には現れるので、AIがうまいことその情報を拾い上げるかもしれない。</li>
 <li>暗槓は手配と鳴き牌のどちらにも表示される。面前だが相手からは見えているという状況が必要。AIがうまいことその情報を拾い上げるだろう。</li>
 <li>北を抜く場合、3枚抜いた場合と鳴いてポンした場合、鳴き牌だけみても区別できないが、手配の枚数で区別が可能。AIがうまいことその情報を拾い上げるだろう。</li>
 </ul>
-<h2 id="_7">インプットデータ、アウトプットデータの形式</h2>
-<p>多分、学習効率とか正答率に影響を大きく及ぼす部分の一つ。全結合モデルとCNNモデルの2つを今の所想定しているので、どちらにも使えるようにデータを組むと楽ではある。ただ全結合モデルの場合に無駄なデータが増えることにはなる。</p>
+<h3 id="_7">インプットデータ、アウトプットデータの形式</h3>
+<p>多分、学習効率とか正答率に影響を大きく及ぼす部分の一つ。全結合モデルとCNNモデルの2つを今の所想定しているので、どちらにも使えるようにデータを組むと楽ではある。ただ全結合モデルの場合に無駄なデータが増えることにはなる。悩ましい。</p>
+<h2 id="_8">全結合学習</h2>
+<h3 id="_9">全結合モデル用データセット</h3>
+<p>全結合用のデータセットは以下の通り。154の入力に対して一つのラベルを1セットとする。</p>
+<p><img alt="description" src="../images/dataset_description.jpg" /></p>
+<p>1.6億局面のデータセットを作るとなるとファイルサイズが半端ないので、1byteの整数(0~255) x 155 のバイナリーデータとして保存する。100万局面を一つのファイルにしておよそ160個ファイルができる計算。<code>np.tobytes()</code>で書いて<code>np.frombuffer()</code>で読み込むのが高速。</p>
+<p>上図の牌番号というのはmjlogの牌IDとは別で、1種類に対して1つの番号を振っている。mjlogの牌ID[0, 1, 2 ,3]は1萬を表すが、牌番号ではすべて[1]で表す。赤を区別できないがとりあえず無視。連続型にならないところで1つ以上値を開けているが、これがいい方向に働くかはわからない。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">getHaiNum</span><span class="p">(</span><span class="n">hai_ID</span><span class="p">):</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">hai</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="c1">#萬子</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>            <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="c1">#筒子</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>            <span class="mi">21</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="c1">#索子</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>            <span class="mi">31</span><span class="p">,</span> <span class="mi">33</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">37</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">45</span><span class="p">]</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="k">return</span> <span class="n">hai</span><span class="p">[</span><span class="n">hai_ID</span> <span class="o">&gt;&gt;</span> <span class="mi">2</span><span class="p">]</span>
+</code></pre></div>
+<h3 id="_10">モデル</h3>
+<p>モデルは、以下。</p>
+<p><img alt="nanikiru_model1" src="../images/nanikiru_model1.jpg" /></p>
+<h3 id="_11">プレテスト</h3>
+<p>いきなり1.6億局面回す前に、試しに100万局面学習、100万局面検証で全結合学習してみた。プログラムはPytorchで組んでいる。</p>
+<h4 id="_12">結果</h4>
+<p>100epoch回したときの損失と精度は以下。</p>
+<p><img alt="nanikiru_model1_loss" src="../images/nanikiru_model1_loss1.jpg" /></p>
+<p><img alt="nanikiru_model1_acc" src="../images/nanikiru_model1_acc1.jpg" /></p>
+<p>testの損失、精度共に50epochを超えると悪くなっており、過学習の気配を見せている。trainの損失、精度共にまだまだ向上していることを見ると、モデル自体の可能性は感じるところではある。たまにtestの精度が著しく悪くなる部分があるが、何に起因しているのだろう。100万局面でもデータの偏りが大きく十分な量になっていない。なにかの入力値にシビアに反応している。あたりか。ぶっちゃけ、最初の1打に白発中のどれから切るかなんて気分だったりするだろうから、このあたりを学習させるのはあまり良くない気もする。要検討。</p>
+<h4 id="_13">速度計測</h4>
+<p>1epochあたりにかかる時間は以下。</p>
+<table>
+<thead>
+<tr>
+<th align="center">device</th>
+<th align="center">batch_size</th>
+<th align="center">time (sec)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">CPU</td>
+<td align="center">100</td>
+<td align="center">178</td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">100</td>
+<td align="center">25</td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">200</td>
+<td align="center">17</td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">500</td>
+<td align="center">15</td>
+</tr>
+<tr>
+<td align="center">GPU</td>
+<td align="center">1000</td>
+<td align="center">15</td>
+</tr>
+</tbody>
+</table>
+<p>GPUを使うことで、約7倍早くなっている。バッチサイズを上げると更に早くなるが、500くらいで頭打ち。バッチサイズは精度にも効いてくるので一概に速度を求めて大きくするのが良いとは限らない。このあたりは要検討。</p>
+<p>バッチサイズが200の場合、GPUを使って100万局面の1epochが20秒程度ということは、1.6億局面だと、単純計算20 x 160 = 3200秒 = 53 min ~ 1時間。2日ほど回すと50epochになるので結果の方向性は見えてきそう。とりあえず回してみるか。</p>
 
               
             </article>

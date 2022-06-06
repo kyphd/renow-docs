@@ -892,36 +892,42 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>nvidia-smi
 </code></pre></div>
 <p><img alt="screenshot" src="../images/Screenshot_20220510115718.png" /></p>
+<p>Ubuntu UpdateしたりしたときにNvidiaドライバーが認識しなくなるときは、一旦削除して再インストールする。</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo apt remove nvidia-driver-*
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo apt autoremove
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>sudo ubuntu-drivers install
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>sudo reboot
+</code></pre></div>
 <h3 id="ssh">SSHをインストール</h3>
 <p>UbuntuはデフォルトでSSHサーバーが入っていないようなので。インストールして設定する。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo apt install openssh-server
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>sudo systemctl status ssh
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo apt install openssh-server
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>sudo systemctl status ssh
 </code></pre></div>
 <p>ActiveになっていればOK。</p>
 <p>/etc/ssh/sshd_configの該当箇所を下記の通り修正</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>PermitRootLogin no
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>PubkeyAuthentication yes
-<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>PermitEmptyPasswords no
-<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>PasswordAuthentication yes
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>PermitRootLogin no
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>PubkeyAuthentication yes
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>PermitEmptyPasswords no
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>PasswordAuthentication yes
 </code></pre></div>
 <p>クライアントから公開鍵等を登録して接続できることを確認。</p>
 <h3 id="python-install">python install</h3>
 <p>python3コマンドをうつのはめんどくさいので、pythonでpython3を呼べるようにする。
 pyenvを入れてもいい気もするが、バージョン使い分けたいときが来たら入れるでいいかと。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo ln -s /usr/bin/python3 /usr/local/bin/python
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo ln -s /usr/bin/python3 /usr/local/bin/python
 </code></pre></div>
 <p>シンボリックリンクを作ったが、alias登録するのとどっちが良いのだろうか？</p>
 <p>pythonはインストールされているけど、pipやvenvはインストールしないといけないようだ。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>python3 -V  <span class="c1"># バージョン確認</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>sudo apt install python3.10-pip
-<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>sudo apt install python3.10-venv
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>python3 -V  <span class="c1"># バージョン確認</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>sudo apt install python3.10-pip
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>sudo apt install python3.10-venv
 </code></pre></div>
 <h3 id="_3">日本語入力</h3>
 <p>日本語入力できなくてもいいかと思っていたけど、本サイトをUbuntuから更新したいときもあるし、日本語入力できるようにしておく。
 USキーボードを使っているのだが、Fcitx5を使うのが良いようだ。</p>
 <p>fcitx5をUbuntu Softwareからインストールしたのち、aptでfcitx5-mozcをインストールしたが、fcitx5-mozcだけで良かったのかもしれない。</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo apt install fcitx5-mozc
-<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>im-config -n fcitx5
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>sudo apt install fcitx5-mozc
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>im-config -n fcitx5
 </code></pre></div>
 <p>再起動したらfcitx5に入力ソースが変わっているので、mozc等の設定をする。
 便利になったもんだ。</p>
