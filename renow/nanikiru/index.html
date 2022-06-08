@@ -496,6 +496,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    本学習
+  </a>
+  
+    <nav class="md-nav" aria-label="本学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    結果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -906,6 +926,26 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    本学習
+  </a>
+  
+    <nav class="md-nav" aria-label="本学習">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    結果
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1051,7 +1091,7 @@
 <li>立直後は強制ツモ切りのため学習局面から削除。局面数がおよそ1.6億局面となった。</li>
 <li>鳴き牌について。誰から鳴いたかは記録しないが、誰かの河に鳴いた牌が記録として存在するので、AIがうまいことその情報を拾い上げるかもしれない。</li>
 <li>大明槓と加槓は区別しない。場に見えている牌という意味で同じ。ただ、河の情報には現れるので、AIがうまいことその情報を拾い上げるかもしれない。</li>
-<li>暗槓は手配と鳴き牌のどちらにも表示される。面前だが相手からは見えているという状況が必要。AIがうまいことその情報を拾い上げるだろう。</li>
+<li>暗槓は手配と鳴き牌のどちらにも表示される。門前だが相手からは見えているという状況が必要。AIがうまいことその情報を拾い上げるだろう。</li>
 <li>北を抜く場合、3枚抜いた場合と鳴いてポンした場合、鳴き牌だけみても区別できないが、手配の枚数で区別が可能。AIがうまいことその情報を拾い上げるだろう。</li>
 </ul>
 <h3 id="_7">インプットデータ、アウトプットデータの形式</h3>
@@ -1119,6 +1159,22 @@
 </table>
 <p>GPUを使うことで、約7倍早くなっている。バッチサイズを上げると更に早くなるが、500くらいで頭打ち。バッチサイズは精度にも効いてくるので一概に速度を求めて大きくするのが良いとは限らない。このあたりは要検討。</p>
 <p>バッチサイズが200の場合、GPUを使って100万局面の1epochが20秒程度ということは、1.6億局面だと、単純計算20 x 160 = 3200秒 = 53 min ~ 1時間。2日ほど回すと50epochになるので結果の方向性は見えてきそう。とりあえず回してみるか。</p>
+<h3 id="_14">本学習</h3>
+<p>1.6億局面から、ランダムに1億局面を学習データ、3000万局面を検証データとして用いる。残りの3000万局面は最終検証用として取り分けておく。</p>
+<h4 id="_15">結果</h4>
+<p>100 epoch学習後の結果が以下。</p>
+<p><img alt="nanikiru_model1_loss_100" src="../images/nanikiru_model1_loss_100epoch.jpg" /></p>
+<p><img alt="nanikiru_model1_acc_100" src="../images/nanikiru_model1_acc_100epoch.jpg" /></p>
+<p>なんと、精度が70%を超えてきた。Suphxの何切る問題の学習精度が76%程度なので<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">1</a></sup>、こんなシンプルな特徴量とモデルでかなりいい線いってると言っていいだろう。以外なのは訓練データよりも検証データのほうが精度がいいことである。普通訓練データのほうが精度は良いのだが。</p>
+<p>まだまだ過学習の気配は見せていないし、若干の伸びしろがありそうなので、もう少し学習を継続してみようと思う。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:5">
+<p><a href="https://doi.org/10.48550/arXiv.2003.13590" target="_blank">Junjie Li et. al., Suphx: Mastering Mahjong with Deep Reinforcement Learning, arXiv:2003.13590</a>&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
 
               
             </article>
